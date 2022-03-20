@@ -1,0 +1,38 @@
+install
+
+    1. for mysql
+        apt install php7.x-mysql
+    2. for postgres
+        apt install php7.x-pgsql
+
+1. Create Model
+
+    php artisan make:model name
+
+2. Create Controller
+
+    php artisan make:controller nameController
+
+3 Create Migration File
+
+    php artisan make:migration create_name_table
+
+4. Run Migrations
+
+    4.1 execute
+        php artisan migrate
+    4.2 undo
+        php artisan migrate:rollback
+    4.2 do undo then execute
+        php artisan migrate:fresh
+
+5. Insert Data Using Eloquent
+
+    $ php artisan tinker
+    
+    >> $user = new App\Models\User
+    >> $user = new User
+    >> $user->name = 'xxx'
+    >> $user->save()
+    >> $user->all()
+    >> $user->firstWhere('name','xxx')
